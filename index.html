@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<!-- This tells the browser that this is an HTML5 document -->
+
+<html lang="en">
+  <!-- The <html> tag is the root element of an HTML page. lang="en" specifies the language as English -->
+
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This makes the page responsive for mobile devices -->
+
+    <title>Abdurehman Eshete Mohammed- Personal Website</title>
+    <!-- The <title> tag sets the text that appears in the browser tab -->
+
+    <style>
+      /* This is CSS (Cascading Style Sheets) for styling the page */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #444;
+        background: linear-gradient(135deg, #4a67e8 0%, #cfdf6d 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Header Styles */
+      header {
+        background: rgb(202, 174, 237);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+        border: 2px solid #667eea;
+        object-position: center;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .profile-img:hover {
+        opacity: 0.8;
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+
+      h1 {
+        color: #1014f4;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .tagline {
+        color: #1e0fef;
+        font-size: 1.4em;
+        margin-bottom: 20px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        color: #667eea;
+        text-decoration: none;
+        font-size: 1.5em;
+        transition: transform 0.3s ease;
+      }
+
+      .social-links a:hover {
+        transform: translateY(-4px);
+      }
+
+      /* Navigation Styles */
+      nav {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #1e10eb;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        background: #34e368;
+        color: rgb(8, 8, 8);
+        transform: translateY(-2px);
+      }
+
+      /* Section Styles */
+      section {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 10px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #1014f4;
+        font-size: 2em;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 10px;
+      }
+
+      h3 {
+        color: #121112;
+        font-size: 1.5em;
+        margin: 20px 0 15px 0;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .skill-item {
+        background: linear-gradient(150deg, #8ad1e0, #c3e6d6);
+        color: rgb(18, 17, 17);
+        padding: 20px;
+        border-radius: 15px;
+        text-align: left;
+        transition: transform 0.3s ease;
+      }
+
+      .skill-item:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Project Cards */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        border: 2px solid transparent;
+        color: black;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        border-color: #667eea;
+      }
+
+      .project-card h4 {
+        color: #667eea;
+        margin-bottom: 10px;
+      }
+
+      /* Publication Images */
+      .publication-image {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: contain;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        display: block;
+        background-color: #f8f9fa;
+      }
+
+      .publication-image:hover {
+        transform: scale(1.15);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        position: relative;
+      }
+
+      label {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #667eea;
+      }
+
+      input,
+      textarea,
+      select {
+        padding: 12px;
+        border: 2px solid #e1e5e9;
+        border-radius: 10px;
+        font-size: 1em;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      button {
+        background: linear-gradient(135deg, #c4ef26, #34db40);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      footer {
+        background: rgb(202, 174, 237);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        color: black;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 10px;
+        }
+
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .skills-grid,
+        .projects-grid {
+          grid-template-columns: 1fr;
+          color: black;
+        }
+      }
+      .para {
+        color: black;
+        text-align: justify;
+      }
+
+      /* Text justification for main content */
+      section p {
+        text-align: justify;
+      }
+
+      .project-card p {
+        text-align: justify;
+        color: black;
+      }
+
+      .skill-item p {
+        text-align: justify;
+      }
+
+      footer p {
+        text-align: center;
+      }
+
+      /* Custom List Styling */
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      ul li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+
+      ul li::before {
+        content: "■";
+        color: #4664eb;
+        font-size: 16px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* Remove bullets from navigation menu */
+      nav ul li::before {
+        content: none;
+      }
+
+      nav ul li {
+        padding-left: 0;
+      }
+
+      a:hover {
+        color: green;
+        text-decoration: none;
+      }
+      .flip-container {
+        perspective: 1000px;
+        margin-left: 15px;
+        vertical-align: top;
+        float: right;
+        width: 150px;
+        height: 150px;
+      }
+      .flip-container:hover .flipper,
+      .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+      }
+
+      .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+
+      .front,
+      .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .front {
+        z-index: 2;
+      }
+      .front img {
+        border-radius: 50%;
+      }
+
+      .back {
+        transform: rotateY(180deg);
+        background-color: rgb(216, 71, 241);
+        color: #d80f0f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .thumbnail-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        padding: 5px;
+        gap: 20px;
+      }
+
+      .thumbnail {
+        width: 350px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 30px;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide-animation {
+        animation: slideShow 20s linear 1, scaleShow 2s ease-in-out 1 20s;
+      }
+
+      .repeat {
+        animation: scaleShow 2s ease-in-out 1;
+      }
+
+      @keyframes slideShow {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(calc(-220px * 2.5));
+        }
+        100% {
+          transform: translateX(calc(-220px * 5));
+        }
+      }
+
+      @keyframes scaleShow {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.3);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .skills-grid square-bullets {
+        color: #131ae3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- The <body> section contains all the visible content of the webpage -->
+
+    <div class="container">
+      <!-- A <div> is a container that groups related elements together -->
+
+      <header>
+        <!-- The <header> tag represents the header section of the page -->
+        <img
+          src="My_picture.jpg"
+          alt="Dr. Abdurehman Eshete Mohammed"
+          class="profile-img"
+        >
+        <!-- This is a placeholder image - replace with your actual photo -->
+
+        <h1>Abdurehman Eshete MOHAMMED</h1>
+
+        <!-- <h1> is the main heading - there should only be one per page -->
+
+        <p class="tagline">
+          Bioengineer, Clinical Chemist, Academic professional & Researcher
+        </p>
+
+        <!-- <p> tags create paragraphs of text -->
+
+        <p class="para">
+          Dedicated academic professional with expertise in research, teaching,
+          and scholarly contributions. Committed to advancing knowledge and
+          fostering intellectual growth in Bioengineering and Clinical
+          Laboratory Sciences.
+        </p>
+
+        <div class="social-links">
+          <!-- Social media links -->
+
+          <a
+            href="https://www.linkedin.com/in/abdurehman-eshete-mohammed-ph-d-3a570b76/"
+            title="LinkedIn"
+            target="_blank"
+          >
+            <img
+              src="Linkedin_logo.png"
+              width="30"
+              height="30"
+              alt="LinkedIn"
+            >
+          </a>
+
+          <a
+            href="https://www.researchgate.net/profile/Abdurehman-Mohammed/research"
+            title="ResearchGate"
+            target="_blank"
+            ><img
+              src="RG_square_green.jpg"
+              width="30"
+              height="30"
+              alt="ResearchGate"
+          ></a>
+
+          <a
+            href="https://scholar.google.com/citations?hl=en&user=3HzcrVMAAAAJ"
+            title="Google Scholar"
+            target="_blank"
+            ><img
+              src="Google_Scholar_logo.svg.png"
+              width="30"
+              height="30"
+              alt="Google Scholar"
+          ></a>
+
+          <a
+            href="https://orcid.org/my-orcid?orcid=0000-0002-9459-8378"
+            title="ORCID_iD"
+            target="_blank"
+            ><img src="ORCID_iD.svg.png" width="30" height="30" alt="ORCID ID"
+          ></a>
+
+          <a href="mailto:aeshete8@gmail.com" title="Email"
+            ><img src="Gmail_icon.png" width="30" height="30" alt="Email"
+          ></a>
+        </div>
+      </header>
+
+      <nav>
+        <!-- The <nav> tag represents navigation links -->
+        <ul>
+          <!-- <ul> creates an unordered list (with bullet points) -->
+          <li><a href="#about">About Me</a></li>
+          <!-- <li> creates list items, <a> creates links -->
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#education">Education & Training</a></li>
+          <li><a href="#academic-experience">Work Experience</a></li>
+          <li><a href="#digital-skill">Digital Skills</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <!-- The <main> tag contains the main content of the page -->
+
+        <section id="about">
+          <!-- <section> groups related content, id="about" creates a bookmark for links -->
+          <h2>About Me</h2>
+          <!-- <h2> is a subheading (you can have multiple) -->
+
+          <div>
+            <img
+              src="My_photo_at_confocal_microscopy.png"
+              alt="My photo at Confocal microscopy"
+              style="
+                width: 300px;
+                height: 400px;
+                margin-left: 15px;
+                vertical-align: top;
+                float: right;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.2)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <p class="para">
+              I am an academic staff member at Wollo University, College of
+              Medicine & Health Sciences, Department of Medical Laboratory
+              Sciences, Dessie, Ethiopia. I have more than a decade of work
+              experience in higher education institutions. My educational
+              journey includes a <b>PhD in Bioengineering</b> from the Izmir
+              Institute of Technology (IZTECH), Izmir, Türkiye, an
+              <b
+                >MSc in Clinical Laboratory Sciences (specialty in Clinical
+                Chemistry)
+              </b>
+              , and a <b>BSc in Medical Laboratory Technology</b>
+              from Jimma University, Ethiopia.
+            </p>
+
+            <p class="para">
+              As a Bioengineer and Clinical Chemist, I possess a wide range of
+              technical skills that include organ-on-a-chip design, fabrication,
+              and optimization, 3D cell culture, confocal microscopy, 3D
+              printing, cell viability assay, Image analysis, cancer biology,
+              molecular biology techniques, ELISA, Immunostaining,
+              Pharmacokinetics-Pharmacodynamics(PK-PD) modeling and simulations,
+              High-performance liquid chromatography (HPLC), histopathology
+              techniques, and clinical sample collection, processing and
+              analysis with different clinical laboratory automation and
+              instruments. I am proficient in R and Python programming languages
+              for data analysis. Moreover, I am a front-end web developer.
+            </p>
+
+            <p class="para">
+              In addition to the above skills, I have published ten research
+              articles in international peer-reviewed journals. In summary, my
+              expertise encompasses bioengineering and laboratory medicine. I am
+              passionate about cancer research, organ-on-a-chip, and stem cell
+              research. I am searching for an opportunity to develop my career
+              in advanced research and scientific knowledge in this field.
+            </p>
+          </div>
+        </section>
+
+        <section id="expertise">
+          <h2>Areas of Expertise</h2>
+
+          <div class="skills-grid square-bullets">
+            <div class="skill-item">
+              <h3>Teaching</h3>
+              <ul>
+                <li>Curriculum Development</li>
+                <li>Student Mentoring</li>
+                <li>Academic Assessment,</li>
+                <li>Educational Technology</li>
+              </ul>
+            </div>
+
+            <div class="skill-item">
+              <h3>Research</h3>
+              <ul>
+                <li>Academic Research</li>
+                <li>Research Design</li>
+                <li>Data Analysis</li>
+                <li>Statistical Methods</li>
+              </ul>
+            </div>
+
+            <div class="skill-item">
+              <h3>Publications</h3>
+              <ul>
+                <li>Academic Writing</li>
+                <li>Peer Review</li>
+                <li>Journal Publications</li>
+                <li>Conference Presentations</li>
+              </ul>
+            </div>
+
+            <div class="skill-item">
+              <h3>Leadership</h3>
+
+              <ul>
+                <li>Academic Administration</li>
+                <li>Committee Leadership</li>
+                <li>Project Management,</li>
+                <li>Collaboration</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="publications">
+          <h2>Selected Publications</h2>
+
+          <div class="projects-grid">
+            <div class="project-card">
+              <h4>
+                <a
+                  href="https://link.springer.com/article/10.1007/s10928-024-09955-2"
+                  target="_blank"
+                  >Multiorgan-on-a-chip for cancer drug
+                  pharmacokinetics-pharmacodynamics (PK-PD) modeling and
+                  simulations</a
+                >
+              </h4>
+              <p class="para">
+                This study developed a 3D-printed integrated breast-liver
+                multiorgan-on-a-chip platform to experimentally generate
+                pharmacokinetic and pharmacodynamic data for cancer drugs. The
+                data was then modeled computationally to identify optimal and
+                safe dosing regimens. This single-fabrication system offers a
+                robust and human-relevant alternative to animal models for the
+                preclinical evaluation of drug efficacy and toxicity.
+              </p>
+
+              <img src="MOC_1.png" alt="MOC" class="publication-image" >
+              <img
+                src="Cell_viability.png"
+                alt="MOC"
+                class="publication-image"
+              >
+            </div>
+
+            <div class="project-card">
+              <h4>
+                <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/22567262/"
+                  target="_blank"
+                  >M. tuberculosis in Lymph Node Biopsy Paraffin-Embedded
+                  Sections</a
+                >
+              </h4>
+
+              <p class="para">
+                Our study at Jimma University Specialized Hospital confirmed a
+                high prevalence (61.7%) of tuberculosis lymphadenitis in lymph
+                node biopsies, with a significantly higher occurrence in female
+                patients, necessitating enhanced control and prevention efforts.
+              </p>
+
+              <img
+                src="TB1.png"
+                alt="Lymph node biopsy showing epitheloid cell changes in H/E stain by 400x."
+                class="publication-image"
+              >
+              <img
+                src="TB2.png"
+                alt="Fragmented or beaded rods (AFB) seen inside and outside macrophages in ZN staining by 400x."
+                class="publication-image"
+              >
+              <img
+                src="TB3.png"
+                alt="Lymphnode biopsy showing giant cells and caseation in H/E stain by 400x."
+                class="publication-image"
+              >
+            </div>
+
+            <div class="project-card">
+              <h4>
+                <a
+                  href="https://pubmed.ncbi.nlm.nih.gov/25926749/"
+                  target="_blank"
+                  >Diabetes mellitus and risk factors in human immunodeficiency
+                  virus-infected individuals at Jimma University Specialized
+                  Hospital, Southwest Ethiopia</a
+                >
+              </h4>
+
+              <p class="para">
+                This cross-sectional study conducted at Jimma University
+                Specialized Hospital found that 6.4% of adults infected with 393
+                HIV have diabetes mellitus.
+              </p>
+
+              <p class="para">
+                The key risk factors significantly associated with diabetes
+                include older age, a longer duration of HAART (highly active
+                antiretroviral therapy), hypertension, and high LDL cholesterol
+                levels.
+              </p>
+
+              <p class="para">
+                The study concludes that individuals infected with HIV should be
+                screened for diabetes both before and after starting HAART, as
+                the treatment may affect their risk for developing diabetes.
+              </p>
+
+              <p>
+                <img
+                  src="Glucose_values.png"
+                  alt="Glucose values"
+                  class="publication-image"
+                >
+              </p>
+              <img
+                src="DM_Table_4.png"
+                alt="Glucose values"
+                class="publication-image"
+              >
+            </div>
+          </div>
+        </section>
+
+        <section id="education">
+          <h2>Education & Training</h2>
+          <div class="project-card">
+            <img
+              src="IYTE_logo.png"
+              alt="IZTECH Logo"
+              style="
+                width: 150px;
+                height: 150px;
+                margin-left: 15px;
+                vertical-align: top;
+                float: right;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.2)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <h3>Ph.D. in Bioengineering</h3>
+
+            <p>
+              <strong>Institution : </strong>Izmir Institute of
+              Technology(IZTECH), Izmir, Türkiye
+            </p>
+            <p>
+              <strong>Dissertation</strong>: Multiorgan-on-a-chip for cancer
+              drug testing
+            </p>
+
+            <p>
+              <strong>Patent</strong>: I have submitted a patent to the Turkish
+              Patent Institute (application number PCT/TR2024/050432) and await
+              the outcome.
+            </p>
+            <p><strong>Address</strong>: Gülbahçe, 35430, Izmir, Türkiye</p>
+            <p>
+              <strong>Website</strong>:
+              <a href="https://iyte.edu.tr/" target="_blank"
+                >https://iyte.edu.tr/</a
+              >
+            </p>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="ikcu_logo.png"
+              alt="ikcu Logo"
+              style="
+                width: 150px;
+                height: 150px;
+                margin-left: 15px;
+                vertical-align: top;
+                float: right;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.2)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <h3>Diploma in Turkish language(C1)</h3>
+
+            <p>
+              <strong>Institution : </strong>Izmir Katip Çelebi University,
+              Izmir, Türkiye
+            </p>
+
+            <p><strong>Address</strong>: 35640 Cigli/Izmir, Türkiye</p>
+            <p>
+              <strong>Website</strong>:
+              <a href="https://ikcu.edu.tr/" target="_blank"
+                >https://ikcu.edu.tr/</a
+              >
+            </p>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="JU_logo.jpg"
+              alt="JU Logo"
+              style="
+                width: 150px;
+                height: 150px;
+                margin-left: 15px;
+                vertical-align: top;
+                float: right;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.2)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <h3>
+              MSc in Clinical Laboratory Sciences (specialty in Clinical
+              Chemistry)
+            </h3>
+
+            <p><strong>Institution</strong>: Jimma University, Ethiopia</p>
+            <p>
+              <strong>Thesis</strong>: Diabetes mellitus and risk factors in
+              human immunodeficiency virus-infected individuals at Jimma
+              University Specialized Hospital, Southwest Ethiopia
+            </p>
+            <p><strong>Address</strong>: 378, Jimma, Ethiopia</p>
+
+            <p>
+              <strong>Website</strong>:
+              <a href="https://ju.edu.et/" target="_blank"
+                >https://ju.edu.et/</a
+              >
+            </p>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="JU_logo.jpg"
+              alt="JU Logo"
+              style="
+                width: 150px;
+                height: 150px;
+                margin-left: 15px;
+                vertical-align: top;
+                float: right;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.2)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <h3>BSc in Medical Laboratory Technology(MLT)</h3>
+
+            <p><strong>Institution</strong>: Jimma University, Ethiopia</p>
+            <p>
+              <strong>Thesis</strong>: : M. tuberculosis in Lymph Node Biopsy
+              Paraffin-Embedded Sections.
+            </p>
+            <p><strong>Address</strong>: 378, Jimma, Ethiopia</p>
+
+            <p>
+              <strong>Website</strong>:
+              <a href="https://ju.edu.et/" target="_blank"
+                >https://ju.edu.et/</a
+              >
+            </p>
+          </div>
+        </section>
+
+        <section id="academic-experience">
+          <h2>Work Experience</h2>
+
+          <div class="project-card">
+            <h3>Assistant Professor of Bioengineering & Clinical Chemistry</h3>
+            <p>
+              <strong>Institution</strong>: Wollo University, Ethiopia, College
+              of Medicine & Health Sciences, Department of Medical Laboratory
+              Sciences, Dessie, Ethiopia
+            </p>
+            <p><strong>Duration</strong>: September 2022 - Present</p>
+            <ul>
+              <li>
+                Currently, I am working on the evaluation of biochemical and
+                hematological profiles among breast cancer patients receiving
+                medical care at Dessie Comprehensive Specialized Hospital.
+              </li>
+              <li>
+                I am working as a laboratory and workshop officer at the Wollo
+                University field and laboratory directorate office.
+              </li>
+              <li>
+                Course delivery for graduate and undergraduate medicine and
+                allied health science students.
+              </li>
+              <li>Advise and supervise graduate and undergraduate students.</li>
+              <li>
+                Actively participate in curriculum revision, school meetings,
+                and in different university committees.
+              </li>
+              <li>Participate in continuous professional development.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h3>Lecturer and Assistant Lecturer</h3>
+
+            <p>
+              <strong>Institution</strong>: Jimma University, Institute of
+              Health, School of Medical Laboratory Sciences, Jimma, Ethiopia
+            </p>
+            <p><strong>Duration</strong>: 2012 - 2016</p>
+            <ul>
+              <li>
+                Delivered courses for Medical Laboratory Science students.
+              </li>
+              <li>
+                Participated in a malaria clinical trial at Jimma University,
+                sponsored by GlaxoSmithKline (GSK).
+              </li>
+              <li>
+                Provided clinical laboratory services to patients at Jimma
+                Specialized Hospital laboratory.
+              </li>
+              <li>Engage actively in clinical research.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h3>Graduate Assistant II</h3>
+            <p>
+              <strong>Institution</strong>: Jimma University, Institute of
+              Health, School of Medical Laboratory Sciences, Jimma, Ethiopia
+            </p>
+
+            <p><strong>Duration</strong>: 2014 - 2019</p>
+            <ul>
+              <li>
+                Assisting medical and allied health science students during
+                their laboratory practical sessions.
+              </li>
+              <li>
+                Preparing clinical samples for laboratory practical sessions.
+              </li>
+              <li>
+                Preparing and processing histopathological samples involves
+                collecting tissue, fixing it, embedding it in paraffin,
+                sectioning it into thin slices, staining it for microscopic
+                examination, and finally mounting it on slides for analysis to
+                diagnose diseases.
+              </li>
+              <li>
+                Providing clinical laboratory services to patients at the Jimma
+                Specialized Hospital laboratory.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="digital-skill">
+          <h2>Digital Skills</h2>
+
+          <div class="project-card">
+            <img
+              src="Skills_image-modified.png"
+              alt="Skills"
+              style="
+                width: 350px;
+                height: 350px;
+                margin-left: 15px;
+                vertical-align: top;
+                float: right;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+              "
+              onmouseover="this.style.transform='scale(1.2)'"
+              onmouseout="this.style.transform='scale(1)'"
+            >
+            <ul>
+              <li>
+                Microsoft Office Package: Microsoft Word, Excel, PowerPoint,
+                Access
+              </li>
+              <li>Monolix Suite: PKanalix, Monolix, Sycomore</li>
+              <li>Electronic Notebook</li>
+              <li>MATLAB SimBiology</li>
+              <li>AutoCAD</li>
+              <li>Vcell simulations</li>
+              <li>R Programming</li>
+              <li>Python Programming</li>
+              <li>Laboratory Information Management System (LIMS)</li>
+              <li>Image J/Fiji software</li>
+              <li>Cyber security management</li>
+              <li>Clinical trial management system</li>
+              <li>HTML, CSS, JavaScript</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="gallery">
+          <h2>Photo Gallery</h2>
+          <div class="thumbnail-container">
+            <img src="Cell_culture.jpg" class="thumbnail" alt="Cell culture" >
+            <img src="Microscope.jpg" class="thumbnail" alt="Microscope" >
+            <img src="Graduation.jpg" class="thumbnail" alt="Graduation" >
+            <img
+              src="Ethiopians_in_izmir.jpg"
+              class="thumbnail"
+              alt="Ethiopians in izmir"
+            >
+          </div>
+        </section>
+
+        <section id="contact">
+          <h2>Contact Information</h2>
+
+          <div class="project-card">
+            <div
+              class="flip-container"
+            
+            >
+              <div class="flipper">
+                <div class="front">
+                  <img
+                    src="WU_logo.png"
+                    alt="WU Logo"
+                    style="width: 150px; height: 150px"
+                  >
+                </div>
+                <div class="back">
+                  <p style="text-align: center; font-size: 23px">
+                    <b>Strive for quality!</b
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p>
+              <strong>Abdurehman Eshete MOHAMMED</strong><br>
+              Wollo University<br>
+              College of Medicine & Health Sciences<br>
+              Department of Medical Laboratory Sciences<br>
+              P.O. Box 1145<br>
+              Dessie, Ethiopia<br>
+            </p>
+
+            <p style="color: #131ae3">
+              <b style="color: black">Email</b>: <b>aeshete8@gmail.com</b
+              ><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b
+                >abdurehman.eshete@wu.edu.et</b
+              ><br>
+            </p>
+
+            <b>Cell phone</b>: +251987114891<br>
+
+            <b>WhatsApp</b>: +251987114891
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <!-- The <footer> tag represents the footer section of the page -->
+        <p>
+          Copyright &copy; 2025 Abdurehman Eshete Mohammed. All rights reserved.
+        </p>
+        <!-- &copy; is an HTML entity that displays the copyright symbol © -->
+        <p>Dedicated to advancing knowledge and academic excellence!</p>
+      </footer>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryLink = document.querySelector('nav a[href="#gallery"]');
+        const thumbnailContainer = document.querySelector(
+          ".thumbnail-container"
+        );
+
+        galleryLink.addEventListener("click", function () {
+          thumbnailContainer.classList.remove("repeat");
+          thumbnailContainer.classList.add("slide-animation");
+
+          thumbnailContainer.addEventListener(
+            "animationend",
+            function handler(e) {
+              if (e.animationName === "slideShow") {
+                thumbnailContainer.classList.remove("slide-animation");
+                thumbnailContainer.classList.add("repeat");
+                thumbnailContainer.removeEventListener("animationend", handler);
+              }
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>
